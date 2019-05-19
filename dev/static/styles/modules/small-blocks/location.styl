@@ -1,0 +1,30 @@
+.location
+    location-width = 178px
+    flex 0 0 location-width
+    width location-width
+    max-width location-width
+
+    &__header
+        display flex
+        align-items center
+        cursor pointer
+        & > *
+            &:not(:last-child)
+                margin-right 10px
+    
+    &__current
+        display flex
+        align-items center
+
+        &:after
+            content ''
+            width: 0;
+            height: 0;
+            margin-left 10px
+            border-style: solid;
+            border-width: 4px 4.5px 0 4.5px;
+            border-color: #000000 transparent transparent transparent;
+
+    &__icon
+        size(16px,16px)
+        fill $base-text-color

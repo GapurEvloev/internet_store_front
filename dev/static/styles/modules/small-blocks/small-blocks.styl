@@ -1,0 +1,46 @@
+@import "location"
+
+.logo
+    font-size 12px
+    display flex
+    flex-direction column
+
+    &__img
+        width 154px
+        height 38px
+
+.search
+    display flex
+    align-items center
+    & > *
+        &:not(:last-child)
+            margin-right 10px
+    
+    &__icon 
+        size(22px,22px)
+        fill: $white
+        cursor pointer
+    
+    .input-field
+        flex 0 0 220px
+        width 220px
+
+.order-callback
+    display flex
+    flex-direction column
+
+    &__description
+       font-size 12px 
+
+    &__phone
+        color $main-action-color
+        font-size 24px
+        font-family $boldest-font
+        line-height 1.5
+        white-space nowrap
+
+    &__link
+        color $white
+        font-family $medium-font 
+        font-size 14px
+        text-decoration underline
