@@ -16,7 +16,8 @@ module.exports = function () {
             .pipe(plumber())
             .pipe(sourcemaps.init())
             .pipe(stylus({
-                'include css': true
+                'include css': true,
+                'include scss': true
             }
             ))
             .pipe(autoprefixer({

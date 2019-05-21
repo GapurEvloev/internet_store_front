@@ -7,5 +7,33 @@ $(document).ready(function () {
     
         });
     };
+
+    var popularCategoriesSlider = function () {
+        if($(window).width() < 768) {
+           $('.js-categories-prev').slick({
+               slidesToShow: 2,
+               slidesToScroll: 1
+           }) 
+        }
+    };
+
     sandwich();
+    popularCategoriesSlider();
 });
+
+var popularCategoriesSlider = function () {
+    var sliderElement = $('.js-categories-prev');
+    if($(window).width() < 768 && !(sliderElement.hasClass('slick-initialized'))) {
+       $('.js-categories-prev').slick({
+           slidesToShow: 2,
+           slidesToScroll: 1
+       }) 
+    } 
+    else if ($(window).width() > 768 && sliderElement.hasClass('slick-initialized')) {
+        sliderElement.slick('unslick');
+    }
+};
+
+$(window).on('resize', function () {
+    popularCategoriesSlider();
+})
