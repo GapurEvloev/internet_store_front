@@ -1,0 +1,100 @@
+.products-prev
+    display flex
+
+.product-prev
+    border 1px solid transparent
+    transition all linear .3s
+    max-width 275px
+
+    &:hover
+        border-color $main-action-color
+        box-shadow 0 0 30px 0 rgba(0,0,0,0.1)
+
+        .product-prev
+            &__footer
+                opacity 1
+
+    &__header
+        display flex
+        align-items center
+        justify-content center
+        height 140px 
+        padding 10px
+        position relative
+        margin-bottom 15px
+    
+    &__body
+        padding 20px
+        display block
+    
+    &__footer
+        opacity 0
+        transition all linear .3s
+    
+    &__img
+        max-width 100%
+        max-height 140px
+    
+    &__marks
+        display flex 
+        position absolute
+        top 0
+        left 10px
+        & > *
+            &:not(:last-child)
+                margin-right 10px
+        
+    &__mark
+        height 30px
+        line-height 30px
+        font-family $medium-font
+        font-size 14px  
+        padding 0 6px
+        border-radius: 0 0 4px 4px
+
+        &.product-prev__mark
+            &--bg
+                &-yellow
+                    background-color $main-action-color 
+                
+                &-green
+                    background-color #1fa349
+                    color $white
+
+    &__name
+        font-size 14px
+        font-family $medium-font
+    
+    &__title
+        height 55px
+        margin-bottom 20px
+    
+    &__info
+        font-size 14px
+        display flex
+        align-items flex-end
+        margin-bottom 15px
+        & > *
+            &:not(:last-child)
+                margin-right 10px
+        
+        &-label
+            font-size 12px
+            text-transform uppercase
+            color #1fa349
+
+    &__price
+        display flex
+        & > *
+            &:not(:last-child)
+                margin-right 10px
+        
+        &-old
+            font-size 14px
+            color $text-info-color
+            padding 0 5px
+            text-decoration line-through
+
+        &-current
+            font-size 18px
+            font-family $boldest-font

@@ -6,4 +6,18 @@
 	border-radius 4px
 	padding 10px 20px
 	font-family $medium-font
-	line-height 20px  
+	line-height 20px
+	display flex
+	align-items center
+
+	& > *
+		&:not(:last-child)
+			margin-right 10px
+	
+	&__icon
+		size(25px,25px)
+	
+	&.btn
+		&--fill
+			justify-content center
+			width 100% 
