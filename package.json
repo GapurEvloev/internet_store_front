@@ -37,6 +37,8 @@
   "dependencies": {
     "normalize.css": "^8.0.0",
     "slick-carousel": "^1.8.1",
+    "stlint": "^1.0.43",
+    "stylus": "^0.54.5",
     "svg4everybody": "^2.1.9"
   }
 }

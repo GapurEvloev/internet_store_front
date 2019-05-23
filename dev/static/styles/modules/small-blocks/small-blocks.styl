@@ -1,5 +1,7 @@
-@import "location"
 @import "banner"
+@import "links"
+@import "location"
+@import "section"
 
 .logo
     font-size 12px
@@ -30,9 +32,6 @@
     display flex
     flex-direction column
 
-    &__description
-       font-size 12px 
-
     &__phone
         color $main-action-color
         font-size 24px
@@ -41,10 +40,7 @@
         white-space nowrap
 
     &__link
-        color $white
-        font-family $medium-font 
         font-size 14px
-        text-decoration underline
 
 .title
     &-page
@@ -61,3 +57,30 @@
     font-size 14px
     color $text-info-color
     margin-left 5px
+
+.slider-nav
+    cursor pointer
+    opacity .5
+    position absolute
+    top 50%
+    transform translateY(-50%)
+    transition 0.3s all linear
+
+    &:hover
+        opacity 1
+    
+    &.slider-nav
+        &--prev
+            left -55px
+        &--next
+            right -55px
+    
+    &.slick-disabled
+        cursor default
+
+        &:hover
+            opacity 0.5
+    
+    &__icon
+        size(30px,30px)
+        fill: $base-text-color

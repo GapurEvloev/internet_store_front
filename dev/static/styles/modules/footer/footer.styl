@@ -1,1 +1,31 @@
 footer { flex: 0 0 auto; }
+
+.footer
+    background-color $dark-bgc
+
+    &-bottom
+        background-color $darkest-bgc
+        color rgba($white, .6)
+        font-size 12px
+        padding 10px 0
+        
+        .container
+            & > *
+                margin 10px 0
+                &:first-child
+                    margin-top 0
+                &:last-child
+                    margin-bottom 0
+        
+        &__line
+            & > *
+                &:not(:last-child)
+                    margin-right 30px
+
+        &__link
+            text-decoration underline
+        
+
+            
+            
+        
