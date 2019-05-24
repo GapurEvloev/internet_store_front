@@ -1,17 +1,31 @@
 .link
     color $base-text-color
     font-family $medium-font 
+    transition 0.2s all linear
+    &:hover
+        color $link-color-hover
+    // &:visited
+    //     color $link-color-visited
 
     &-white
         color $white
         font-family $medium-font 
+        transition 0.2s all linear
     
     &-green
         color $link-color
         font-family $medium-font 
-        
+        transition 0.2s all linear
         &:hover
             color $link-color-hover
     
+    &-yellow
+        color $main-action-color
+        font-family $medium-font 
+        transition 0.2s all linear
+        &:hover
+            color darken($main-action-color, 20%)
+    
     &-underline
         text-decoration underline
+        transition 0.2s all linear

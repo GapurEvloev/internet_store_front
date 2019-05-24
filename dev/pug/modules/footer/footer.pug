@@ -1,6 +1,70 @@
+mixin footeNavLink(link,text,descr)
+    li.footer-nav__item
+        a(href=link).footer-nav__link=text
+        if(descr)
+            span.footer-nav__descr=descr
+
 footer.footer
     .footer-main
         .container
+            .footer-callback
+                img(src="static/images/general/qrcode.svg", alt="QR").footer-callback__img
+                .order-callback.footer-callback__order-callback
+                    span.order-callback__description Звоните круглосуточно
+                    a(href="tel:+74993348888").order-callback__phone +7 499 334-88-88
+                    a(href="#").order-callback__link.link-white.link-underline  Заказать звонок
+            
+            .footer-nav
+                .footer-nav__col
+                    span.footer-nav__title О нас
+                    ul.footer-nav__list
+                        +footeNavLink('#','Оплата и доставка','')
+                        +footeNavLink('#','Гарантия','')
+                        +footeNavLink('#','Услуги по обработке металла','')
+                        +footeNavLink('#','Компания','')
+                        +footeNavLink('#','Контакты','Связь с директором')
+                
+                .footer-nav__col
+                    span.footer-nav__title Каталог
+                    ul.footer-nav__list
+                        +footeNavLink('#','Все для кровли','')
+                        +footeNavLink('#','Фасад','')
+                        +footeNavLink('#','Профнастил','')
+                        +footeNavLink('#','Листовой прокат','')
+                        +footeNavLink('#','Рулонная сталь','')
+                
+                .footer-nav__col
+                    .footer-nav__block
+                        span.footer-nav__title Принимаем к оплате
+                        .payment-types.footer-nav__payment
+                            ul.payment-types__list
+                                li.payment-types__item
+                                    +icon('visa','payment-types__icon')
+                                li.payment-types__item
+                                    +icon('mastercard','payment-types__icon')
+                                li.payment-types__item
+                                    +icon('paypal','payment-types__icon')
+                            a(href="#").link-underline.link-yellow Оплата заказа онлайн
+
+                    .footer-nav__block
+                        span Акции и спецпредложения
+
+                .footer-nav__col
+                    .footer-nav__block
+                        span.footer-nav__title Контакты
+                        .footer-contacts    
+                            +icon('map','footer-contacts__icon')
+                            span.footer-contacts__title Офис
+                            p.footer-contacts__text 111555, Москва, ул. Большая Грузинская 61, ст. 2
+                            a(href="#").footer-contacts__link.link-underline на карте
+                    
+                    .footer-nav__block
+                        .footer-contacts    
+                            +icon('map','footer-contacts__icon')
+                            span.footer-contacts__title Склад и производство
+                            p.footer-contacts__text 111555, Москва, ул. Большая Грузинская 62, ст. 2
+                            a(href="#").footer-contacts__link.link-underline на карте
+
     .footer-bottom
         .container
             .footer-bottom__line

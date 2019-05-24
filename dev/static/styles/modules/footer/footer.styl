@@ -3,6 +3,86 @@ footer { flex: 0 0 auto; }
 .footer
     background-color $dark-bgc
 
+    &-main
+        background-color $dark-bgc
+        color $white
+        padding 30px 0
+
+        .container
+            & > *
+                margin 40px 0
+                &:first-child
+                    margin-top 0
+                &:last-child
+                    margin-bottom 0
+    
+    &-nav
+        display flex
+        & > *
+            flex 1
+            &:not(:last-child)
+                margin-right 20px
+        
+        &__block
+            margin-bottom 40px
+            &:last-child
+                margin-bottom 0
+
+        &__title
+            display block
+            font-family $bold-font
+            margin-bottom 10px
+        
+        &__list
+            & > *
+                margin 10px 0
+                &:first-child
+                    margin-top 0
+                &:last-child
+                    margin-bottom 0
+
+        &__item
+            font-size 14px
+            & > *
+                &:not(:last-child)
+                    margin-right 10px
+        
+        &__link
+            color $white
+        
+        &__descr
+            color rgba($white, .6)
+            font-size 12px
+            line-height 14px
+    
+    &-contacts 
+        position relative
+        padding-left 25px
+
+        &__icon
+            size(16px,16px)
+            fill $white  
+            position absolute
+            left 0px
+            top 0
+        
+        &__title
+            font-size 14px
+            font-family $medium-font
+            display block
+            margin-bottom 5px
+
+        &__text
+            font-size 12px
+            display inline
+
+        &__link
+            font-size 12px
+            margin-left 5px
+            color $white
+        
+
+
     &-bottom
         background-color $darkest-bgc
         color rgba($white, .6)
@@ -25,7 +105,30 @@ footer { flex: 0 0 auto; }
         &__link
             text-decoration underline
         
-
-            
-            
+    &-callback
+        display flex
+        align-items center
+        & > *
+            &:not(:last-child)
+                margin-right 20px
         
+        &__img
+            width auto
+            max-height 80px
+
+.payment-types
+    & > *
+        margin 10px 0
+        &:first-child
+            margin-top 0
+        &:last-child
+            margin-bottom 0
+    &__list
+        display flex
+        & > *
+            &:not(:last-child)
+                margin-right 10px
+    
+    &__icon
+        fill: $white
+        size(54px,44px)
