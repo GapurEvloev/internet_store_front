@@ -3,7 +3,8 @@ $(document).ready(function () {
 
 	//Активация кнопки(бургер/sandwich) в каталоге start
 	var sandwich = function () {
-		$(document).on('click', '.sandwich', function () {
+		$(document).on('click', '.catalog-nav__header', function () {
+			var sandwich = $(this).find('.sandwich')
 			$(this).toggleClass('sandwich--active');
 	
 		});
