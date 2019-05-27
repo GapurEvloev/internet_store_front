@@ -1,0 +1,21 @@
+.file-upload 
+    align-items: center;
+    display: flex;
+    cursor pointer 
+  
+    &__input[type="file"]
+        display: none
+
+    &__custom
+        color #1fa349
+        font-family $bold-font
+        font-size 14px
+        display flex
+        align-items center
+        & > *
+            &:not(:last-child)
+                margin-right 7px
+    
+    &__icon
+        size(20px,26px)
+        fill #1fa349 //hex

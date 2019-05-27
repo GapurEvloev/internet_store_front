@@ -7,26 +7,27 @@
         .popup__body
             form.form(action="handler.php" name="consultation_form")
                 .form__body
-                    .form-group.form-group--required
-                        .form-group__body
+                    .form-line
+                        .form-group.form-group--required.form-group--with-m
                             label.form-group__label Контактный телефон
                             input.form-group__field.input-field(placeholder="+7(912)123-45-67" type="phone")
-                    .form-group
-                        .form-group__body
+                    .form-line
+                        .form-group
                             label.form-group__label Вопрос или комментарий
                             textarea.textarea-field(name="consultation_comment" placeholder="Здравствуйте, меня интересует...")
-                    .form-group
-                        .form-group__body
-                            .file-upload
-                                span.file-upload__text Прикрепите файл
-                                .file-upload__btn
-                                    label.file-upload__btn-label
-                                        input.file-upload__btn-input(type="file")
-                                        span.file-upload__btn-text Загрузить
-                .form-footer
-                    .form-group-submit
-                        input(type="submit" value="Получить консультацию").btn
-                        span Ответим в течении 10 минут
-                    p.form-info Задавая вопрос Вы соглашаетесь с 
-                        a(href="#").form-info__link политикой конфиденциальности
+                    .form-line    
+                        .form-group
+                            label.file-upload
+                                input.file-upload__input(type="file")
+                                .file-upload__custom
+                                    +icon('attach','file-upload__icon')
+                                    span.file-upload__text Прикрепить файл
+                .form__footer
+                    .form-line
+                        .form-group.form-group--with-m
+                            input(type="submit" value="Получить консультацию").btn.btn--size-l
+                        span.form-line__info.form-line__info--color-green Ответим в течении 10 минут
+                    .form-line
+                        p.form-info Задавая вопрос Вы соглашаетесь с 
+                            a(href="#").form-info__link политикой конфиденциальности
     .show-on-seccess
