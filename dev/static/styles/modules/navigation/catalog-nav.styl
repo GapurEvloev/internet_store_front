@@ -1,4 +1,7 @@
 .catalog-nav
+    &.catalog-nav--active
+        .catalog-nav__body
+            display block
     &__header
         display flex
         align-items center
@@ -8,3 +11,125 @@
             &:not(:last-child)
                 margin-right 10px
         
+    &__body
+        background-color $white
+        border-radius 4px 
+        box-shadow 0 0 5px 0 rgba(159, 197, 178, .5)
+        display none
+        color $base-text-color
+        position absolute
+        top calc(100%)
+        left 80px
+        z-index 11
+
+        &:before    
+            content ''
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 10px 10px 10px;
+            border-color: transparent transparent $white transparent
+            position absolute
+            left 197px
+            top -9px
+    
+    &__list
+        position relative
+        width 260px
+        width max-content
+
+    &__item
+        &:first-child 
+            border-radius 4px 4px 0 0
+            overflow hidden
+        
+        &:last-child
+            border-radius 0 0 4px 4px
+            overflow hidden
+
+        &:hover
+            .catalog-subnav
+                display block
+    
+    &__label
+        display flex
+        align-items center
+        font-size 18px
+        padding 6px 65px 6px 15px
+        cursor pointer
+        transition 0.2s all linear
+        position relative
+        & > *
+            &:not(:last-child)
+                margin-right 5px
+        
+        &:hover
+            background-color $main-action-color
+
+        &-text
+            font-size 14px
+            line-height 18px
+            font-family $medium-font
+        
+        &:after
+            border-style: solid;
+            border-width: 5px 0 5px 5px;
+            border-color: transparent transparent transparent $base-text-color;
+            content ''
+            height: 0;
+            position absolute
+            right 20px
+            top 10px
+            width: 0;
+
+.catalog-subnav
+    background-color $white
+    border-left 1px solid $main-action-color
+    border-radius 0 4px 4px 0
+    display none
+    position absolute
+    left calc(100% - 2px)
+    bottom 0
+    top 0
+    padding 15px 20px 0
+    width 670px
+
+    .simplebar-vertical
+        margin 10px 10px 10px 0
+
+    &__inner
+        display flex
+        & > *
+            &:not(:last-child)
+                margin-right 30px
+    
+    &__col
+        // width 280px
+        flex 1
+        & > *
+            margin 30px 0
+            &:first-child
+                margin-top 0
+            &:last-child
+                margin-bottom 0
+    
+    &__header
+        margin-bottom 10px
+    
+    &__title
+        font-size 18px
+        font-family $bold-font
+        line-height 26px
+    
+    &__list
+        & > *
+            margin 10px 0
+            &:first-child
+                margin-top 0
+            &:last-child
+                margin-bottom 15px
+        
+    &__item
+        font-family $medium-bold
+        font-size 14px
+        line-height 18px 

@@ -4,8 +4,11 @@ $(document).ready(function () {
 	//Активация кнопки(бургер/sandwich) в каталоге start
 	var sandwich = function () {
 		$(document).on('click', '.catalog-nav__header', function () {
-			var sandwich = $(this).find('.sandwich')
-			$(this).toggleClass('sandwich--active');
+			var sandwich = $(this).find('.sandwich'),
+				catalog  = $(this).parent();
+
+			sandwich.toggleClass('sandwich--active');
+			catalog.toggleClass('catalog-nav--active');
 	
 		});
 	};
@@ -43,13 +46,66 @@ $(document).ready(function () {
 			infinite: false
 		})
 		//настройки слайдера "вы смотрели" конец
-	}
+	};
 	//slider in section "You see" end
 
-	//инициализация
+	//выпадающие блоки каталога при наведении начало
+	var catalorNavHover = function () {
+		$('.catalog-nav__item').hover(
+			function() {
+				var catalogBody = $(this).closest('.catalog-nav__body');
+
+				catalogBody.css('width', 825);
+			},
+			function() {
+				var catalogBody = $(this).closest('.catalog-nav__body');
+
+				catalogBody.css('width', 'auto');
+			}
+		);
+	};
+	// выпадающие блоки каталога при наведении конец
+
+	// Подтверждение и выбор города начало
+	var locationChoose = function() {
+		$(document).on('click','.location-question__btn',function() {
+			var answer = $(this).data('location');
+			
+			$(this).closest('.location-question').hide();
+
+			if(answer === 'no'){
+				$(this).closest('.location__body').addClass('is-location-choose');
+			}
+		});
+
+		$(document).on('click','.location-choose__item',function() {
+			$(this).closest('.location__body').removeClass('is-location-choose');
+		});
+
+		$(document).on('click','.location__header',function() {
+			$(this).siblings('.location__body').addClass('is-location-choose');
+		});
+	};
+	// Подтверждение и выбор города конец
+
+	// попап-окно
+	var popupLink = function() {
+		$('.js-popup-link').magnificPopup({
+			showCloseBtn: false
+		});
+
+		$(document).on('click','.popup__close', function() {
+			$.magnificPopup.close();
+		});
+	};
+
+	//вызов функций
 	sandwich();
 	popularCategoriesSlider();
 	productPrevSlider();
+	catalorNavHover();
+	locationChoose();
+	popupLink();
 });
 
 //slider in section popular categiries start with resize
@@ -59,7 +115,7 @@ var popularCategoriesSlider = function () {
 		$('.js-categories-prev').slick({
 			slidesToShow: 2,
 			slidesToScroll: 1
-		}) 
+		}); 
 	} 
 	else if ($(window).width() > 768 && sliderElement.hasClass('slick-initialized')) {
 		sliderElement.slick('unslick');
@@ -70,5 +126,5 @@ var popularCategoriesSlider = function () {
 //resize init start
 $(window).on('resize', function () {
 	popularCategoriesSlider();
-})
+});
 //resize init end

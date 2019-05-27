@@ -35,7 +35,9 @@
     "imagemin-pngquant": "^6.0.0"
   },
   "dependencies": {
+    "magnific-popup": "^1.1.0",
     "normalize.css": "^8.0.0",
+    "simplebar": "^4.0.0",
     "slick-carousel": "^1.8.1",
     "stlint": "^1.0.43",
     "stylus": "^0.54.5",

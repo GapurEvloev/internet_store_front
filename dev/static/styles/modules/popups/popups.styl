@@ -1,0 +1,33 @@
+.popup
+    position relative
+    max-width 520px
+    margin 50px auto
+
+    &__header
+        padding 15px 25px 15px 40px
+        background-color $popup-header-bgc
+        display flex
+        align-items center
+    
+    &__title
+        font-size 18px
+        line-height 1.44
+
+    &__close
+        size(30px,30px)
+        display flex
+        align-items center
+        justify-content center
+        margin-left: auto;
+        cursor pointer
+        opacity 0.2
+        transition 0.2s all linear
+
+        &:hover
+            opacity .7
+
+        &-icon
+            size(16px,16px)
+    &__body
+        background-color $white
+        padding 40px

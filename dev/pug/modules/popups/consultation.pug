@@ -1,0 +1,32 @@
+.popup.mfp-hide#popup-consultation
+    .hide-on-success
+        .popup__header
+            span.popup__title Получить консультацию
+            .popup__close
+                +icon('close','popup__close-icon')
+        .popup__body
+            form.form(action="handler.php" name="consultation_form")
+                .form__body
+                    .form-group.form-group--required
+                        .form-group__body
+                            label.form-group__label Контактный телефон
+                            input.form-group__field.input-field(placeholder="+7(912)123-45-67" type="phone")
+                    .form-group
+                        .form-group__body
+                            label.form-group__label Вопрос или комментарий
+                            textarea.textarea-field(name="consultation_comment" placeholder="Здравствуйте, меня интересует...")
+                    .form-group
+                        .form-group__body
+                            .file-upload
+                                span.file-upload__text Прикрепите файл
+                                .file-upload__btn
+                                    label.file-upload__btn-label
+                                        input.file-upload__btn-input(type="file")
+                                        span.file-upload__btn-text Загрузить
+                .form-footer
+                    .form-group-submit
+                        input(type="submit" value="Получить консультацию").btn
+                        span Ответим в течении 10 минут
+                    p.form-info Задавая вопрос Вы соглашаетесь с 
+                        a(href="#").form-info__link политикой конфиденциальности
+    .show-on-seccess

@@ -2,14 +2,7 @@ header.header
     .header-top
         .container
 
-            .location.header-top__location
-                .location__header
-                    +icon('map','location__icon')
-                    span.location__current 
-                        | Нижний Новгород
-
-                .location__body
-
+            include location
             include ../navigation/main-nav
 
             .user-nav.header-top__user-nav
@@ -25,7 +18,7 @@ header.header
             include ../navigation/catalog-nav
 
             .search.header-main__search
-                input(type="text" placeholder="Артикул или название товара").input-field.input-field--size-small
+                input(type="text" placeholder="Артикул или название товара").input-field.input-field--size-s
                 +icon('search','search__icon')
 
             .order-callback.header-main__order-callback

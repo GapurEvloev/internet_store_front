@@ -3,18 +3,29 @@
     flex 0 0 location-width
     width location-width
     max-width location-width
+    position relative
 
     &__header
         display flex
         align-items center
         cursor pointer
+        position relative
         & > *
             &:not(:last-child)
                 margin-right 10px
     
+    &__body
+        &.is-location-choose
+            .location-choose
+                display block
+    
     &__current
-        display flex
+        white-space nowrap
+        overflow hidden
+        text-overflow ellipsis
+        display block
         align-items center
+        padding-right 10px
 
         &:after
             content ''
@@ -24,7 +35,107 @@
             border-style: solid;
             border-width: 4px 4.5px 0 4.5px;
             border-color: #000000 transparent transparent transparent;
+            position absolute
+            z-index 1
+            right 0
+            top 50%
+            transform translateY(-50%)
 
     &__icon
         size(16px,16px)
         fill $base-text-color
+        flex-shrink 0
+    
+    &-question
+        display flex
+        align-items center
+        position absolute
+        left 0
+        top calc(100% + 10px)
+        z-index 1
+        background-color $white
+        padding 8px 10px
+        border-radius 4px
+        box-shadow 0 0 5px 0 rgba(159, 197, 178, .5)
+        & > *
+            &:not(:last-child)
+                margin-right 15px
+        
+
+        &:before    
+            content ''
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 10px 10px 10px;
+            border-color: transparent transparent $white transparent
+            position absolute
+            left 100px
+            top -9px
+        
+        &__buttons
+            display flex
+            align-items center
+            & > *
+                &:not(:last-child)
+                    margin-right 10px
+
+        &__text
+            font-size 18px
+            line-height 1.44
+            font-family $medium-font
+            white-space nowrap
+    
+    &-choose
+        background-color $white
+        border 2px solid $main-action-color
+        border-radius 4px
+        box-shadow 0 0 30px 0 rgba(0, 0, 0, 0.2)
+        left 20px
+        top 10px
+        z-index 1
+        position absolute
+        width 210px
+        display none
+
+        &__header
+            border-bottom 2px solid $main-action-color
+        
+        &__body
+            position relative
+            height auto
+            max-height: 240px
+            display flex
+            flex-direction column
+
+            &:before,
+            &:after
+                height 18px
+                content ''
+                display block
+                position absolute
+                left 0
+                right 0
+
+            &:before
+                background-image linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0))
+                top 0
+            
+            &:after
+                background-image linear-gradient(to top, #ffffff, rgba(255, 255, 255, 0))
+                bottom 0
+
+        &__list
+            padding 15px 0
+            overflow auto
+            
+        &__item
+            cursor pointer
+            font-size 14px
+            font-family $medium-font
+            line-height 18px
+            padding 5px 15px
+            transition 0.2s all linear
+
+            &:hover
+                background-color $main-action-color
