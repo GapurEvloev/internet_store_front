@@ -1,6 +1,10 @@
-size($a,$b)
-  width: $a
-  height: $b
+size()
+  if length(arguments) == 1
+    width: arguments[0]
+    height: arguments[0]
+  else
+    width: arguments[0]
+    height: arguments[1]
 
 placeholder()
 	&::-webkit-input-placeholder
@@ -11,3 +15,8 @@ placeholder()
 		{block}
 	&:-ms-input-placeholder
 		{block}
+
+focus()
+  &:focus
+    box-shadow 0 0 0 3px alpha($blue, 0.25)
+    outline none

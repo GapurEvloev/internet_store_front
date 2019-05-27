@@ -5,12 +5,12 @@
             .popup__close
                 +icon('close','popup__close-icon')
         .popup__body
-            form.form(action="handler.php" name="consultation_form")
+            form.form(name="consultation_form")
                 .form__body
                     .form-line
                         .form-group.form-group--required.form-group--with-m
                             label.form-group__label Контактный телефон
-                            input.form-group__field.input-field(placeholder="+7(912)123-45-67" type="phone")
+                            input.form-group__field.input-field(placeholder="+7(912)123-45-67" type="phone" name="phone")
                     .form-line
                         .form-group
                             label.form-group__label Вопрос или комментарий

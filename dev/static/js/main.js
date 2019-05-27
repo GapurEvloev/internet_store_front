@@ -100,10 +100,45 @@ $(document).ready(function () {
 	};
 
 	
-	$(".file-upload input[type=file]").change(function(){
-		let filename = $(this).val().replace(/.*\\/, "");
-		$(this).closest('.file-upload').find('.file-upload__text').html(filename);
-	});
+	// $(".file-upload input[type=file]").change(function(){
+	// 	let filename = $(this).val().replace(/.*\\/, "");
+	// 	$(this).closest('.file-upload').find('.file-upload__text').html(filename);
+	// });
+
+	//валидация форм начало
+	var formValidate = function () {
+		$('form').each(function () {
+			$(this).on('submit', function () {
+				$(this).validate(option:{
+					rules: {
+						name: 'required',
+						phone: 'required',
+						email: 'required',
+						password: 'required'
+					},
+					messages: {
+						name: 'Введите корректное имя',
+						phone: 'Введите корректный номер',
+						email: 'Введите корректный email',
+						password: 'Введите корректный пароль'
+					},
+					errorPlacement: function(error, element) {
+						element.attr("placeholder", error[0].outerText);
+					}
+				});
+				if($(this).valid()) {
+					var wrap = $(this)[0].closest('.hide-on-access');
+
+					if (wrap) {
+						$(wrap).siblings('.show-on-access').show();
+						$(wrap).hide();
+					}
+				}
+				return false;
+			})
+		});
+	};
+	//валидация форм конец
 
 	//вызов функций
 	sandwich();
@@ -112,6 +147,7 @@ $(document).ready(function () {
 	catalorNavHover();
 	locationChoose();
 	popupLink();
+	formValidate();
 });
 
 //slider in section popular categiries start with resize
