@@ -35,7 +35,6 @@
             &--color
                 &-green
                     color #1fa349
-    
     &-info
         font-size 12px
         color $text-info-color
@@ -43,3 +42,33 @@
         &__link
             text-decoration underline
             color $text-info-color
+    
+    &-success
+        background-color $popup-header-bgc 
+        & > * 
+            margin 10px 0 
+            &:first-child
+                margin-top 0
+            &:last-child
+                margin-bottom 0
+        
+        &__block
+            background-color $white
+            padding 30px 40px
+        
+        &__row
+            display flex
+            & > *
+                &:not(:last-child)
+                    margin-right 10px
+        
+        &-contacts
+            position relative
+            padding-left 50px
+
+            &__icon
+                left 0
+                position absolute
+                top 0
+                size(35px)
+            
