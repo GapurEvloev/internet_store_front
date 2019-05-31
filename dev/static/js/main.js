@@ -109,7 +109,7 @@ $(document).ready(function () {
 	var formValidate = function () {
 		$('form').each(function () {
 			$(this).on('submit', function () {
-				$(this).validate(option:{
+				$(this).validate({
 					rules: {
 						name: 'required',
 						phone: 'required',
@@ -127,10 +127,10 @@ $(document).ready(function () {
 					}
 				});
 				if($(this).valid()) {
-					var wrap = $(this)[0].closest('.hide-on-access');
+					var wrap = $(this)[0].closest('.hide-on-success');
 
 					if (wrap) {
-						$(wrap).siblings('.show-on-access').show();
+						$(wrap).siblings('.show-on-success').show();
 						$(wrap).hide();
 					}
 				}
