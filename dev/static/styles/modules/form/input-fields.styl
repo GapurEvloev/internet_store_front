@@ -10,6 +10,11 @@
     
     +placeholder()
         color $text-info-color
+    
+    &.error
+        border-color $warning-color
+        +placeholder()
+            color $warning-color
 
     &.input-field
         &--size

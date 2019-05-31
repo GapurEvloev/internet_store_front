@@ -31,3 +31,29 @@
                         p.form-info Задавая вопрос Вы соглашаетесь с 
                             a(href="#").form-info__link политикой конфиденциальности
     .show-on-seccess
+        .popup__header
+            span.popup__title Мы Вам перезвоним
+            .popup__close
+                +icon('close','popup__close-icon')
+        .popup__body
+            .form-success
+                .form-success__block
+                    .form-success__info
+                        span.form-success__text Номер вашей заявки
+                        span.form-success__number 1234
+                    .form-success__descr Менеджер позвонит на указанный номер сегодня до 14:30 по московскому времени.
+                .form-success__block
+                    span.form-success__label
+                    .form-success__row
+                        .form-success__col
+                            .form-success-contacts
+                                +icon('phone','form-success-contacts__icon')
+                                span.form-success-contacts__text Звоните круглосуточно
+                                a(href="tel:+74998383838").link-green.form-success-contacts__link +7 499 838-38-38
+                                a(href="#").link-underline Набрать номер по QR-коду
+                        .form-success__col
+                             .form-success-contacts
+                                +icon('mail','form-success-contacts__icon')
+                                span.form-success-contacts__text Напишите нам Email
+                                a(href="mailto:egapur@yandex.ru").link-green.form-success-contacts__link egapur@yandex.ru
+                        
