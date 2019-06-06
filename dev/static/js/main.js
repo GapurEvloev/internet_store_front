@@ -113,13 +113,11 @@ $(document).ready(function () {
 					rules: {
 						name: 'required',
 						phone: 'required',
-						email: 'required',
 						password: 'required'
 					},
 					messages: {
 						name: 'Введите корректное имя',
 						phone: 'Введите корректный номер',
-						email: 'Введите корректный email',
 						password: 'Введите корректный пароль'
 					},
 					errorPlacement: function(error, element) {
