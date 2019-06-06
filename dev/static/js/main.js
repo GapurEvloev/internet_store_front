@@ -113,12 +113,14 @@ $(document).ready(function () {
 					rules: {
 						name: 'required',
 						phone: 'required',
-						password: 'required'
+						password: 'required',
+						req_textarea: 'required'
 					},
 					messages: {
 						name: 'Введите корректное имя',
 						phone: 'Введите корректный номер',
-						password: 'Введите корректный пароль'
+						password: 'Введите корректный пароль',
+						req_textarea: 'Заполните поле'
 					},
 					errorPlacement: function(error, element) {
 						element.attr("placeholder", error[0].outerText);
