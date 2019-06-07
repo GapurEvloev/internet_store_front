@@ -3,6 +3,12 @@
 @import "textarea-field"
 @import "form-group"
 
+.show-on-success
+    display none
+
+    .popup__body
+        padding 0
+
 .form
     &__body
         margin-bottom 30px
@@ -24,7 +30,7 @@
     
     &-line
         display flex
-        align-items center
+        align-items flex-end
         & > *
             &:not(:last-child)
                 margin-right 20px
@@ -35,6 +41,10 @@
             &--color
                 &-green
                     color #1fa349
+
+            &--size-s
+                font-size 12px
+
     &-info
         font-size 12px
         color $text-info-color
@@ -45,8 +55,9 @@
     
     &-success
         background-color $popup-header-bgc 
+
         & > * 
-            margin 10px 0 
+            margin 6px 0 
             &:first-child
                 margin-top 0
             &:last-child
@@ -60,11 +71,43 @@
             display flex
             & > *
                 &:not(:last-child)
+                    margin-right 40px
+        &__info
+            display flex
+            align-items center
+            font-size 24px
+            margin-bottom 15px
+            & > *
+                &:not(:last-child)
                     margin-right 10px
+
+        &__number
+            font-family $bold-font
         
+        &__descr
+            font-size 14px
+            font-family $light-font
+
+            strong 
+                font-family $bold-font
+        
+        &__label
+            display block
+            font-size 18px
+            margin-bottom 20px
+
         &-contacts
+            display flex
+            flex-direction column
+            font-size 14px
             position relative
             padding-left 50px
+            & > *
+                margin 3px 0
+                &:first-child
+                    margin-top 0
+                &:last-child
+                    margin-bottom 0
 
             &__icon
                 left 0
@@ -72,3 +115,5 @@
                 top 0
                 size(35px)
             
+            &__link
+                font-size 12px
