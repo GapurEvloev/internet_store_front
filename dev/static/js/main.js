@@ -140,6 +140,17 @@ $(document).ready(function () {
 	};
 	//валидация форм конец
 
+	//функция оценки качества поддержки начало
+	var reviewLine = function () {
+		$(document).on('click','.review-line__number', function () {
+			var left = $(this).parent().position().left;
+			$(this).parent().siblings().removeClass('review-line__item--active');
+			$(this).parent().addClass('review-line__item--active');
+			$('.review-line').css('width',left - 1);
+		});
+	}
+	//функция оценки качества поддержки конец
+
 	//вызов функций
 	sandwich();
 	popularCategoriesSlider();
@@ -148,6 +159,7 @@ $(document).ready(function () {
 	locationChoose();
 	popupLink();
 	formValidate();
+	reviewLine();
 });
 
 //slider in section popular categiries start with resize

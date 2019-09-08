@@ -2,6 +2,7 @@
 @import "file-upload"
 @import "textarea-field"
 @import "form-group"
+@import "review-line"
 
 .show-on-success
     display none
@@ -30,7 +31,7 @@
     
     &-line
         display flex
-        align-items flex-end
+        align-items center
         & > *
             &:not(:last-child)
                 margin-right 20px
@@ -90,11 +91,6 @@
 
             strong 
                 font-family $bold-font
-        
-        &__label
-            display block
-            font-size 18px
-            margin-bottom 20px
 
         &-contacts
             display flex

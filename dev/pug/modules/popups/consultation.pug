@@ -43,7 +43,7 @@
                         span.form-success__number 1234
                     .form-success__descr Менеджер позвонит на указанный номер #[strong сегодня до 14:30] по московскому времени.
                 .form-success__block
-                    span.form-success__label Не готовы ждать?
+                    span.popup__subtitle Не готовы ждать?
                     .form-success__row
                         .form-success__col
                             .form-success-contacts
@@ -56,4 +56,19 @@
                                 +icon('convert','form-success-contacts__icon')
                                 span.form-success-contacts__text Напишите нам Email
                                 a(href="mailto:egapur@yandex.ru").link-green egapur@yandex.ru
-                        
+            .fast-review
+                form.form.fast-review-form
+                    span.popup__subtitle Насколько быстро Вы нашли нужный товар?
+                    .review-line__wrapper 
+                        .review-line
+                        .review-line__inner
+                            .review-line__item.review-line__item--descr-left(data-fast-review="очень долго")
+                                span.review-line__number 1
+                            .review-line__item.review-line__item--descr-left(data-fast-review="долго")
+                                span.review-line__number 2
+                            .review-line__item.review-line__item--descr-center(data-fast-review="нормально")
+                                span.review-line__number 3
+                            .review-line__item.review-line__item--descr-right(data-fast-review="быстро")
+                                span.review-line__number 4
+                            .review-line__item.review-line__item--descr-right(data-fast-review="очень быстро")
+                                span.review-line__number 5
