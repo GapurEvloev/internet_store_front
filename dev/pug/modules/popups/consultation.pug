@@ -56,19 +56,23 @@
                                 +icon('convert','form-success-contacts__icon')
                                 span.form-success-contacts__text Напишите нам Email
                                 a(href="mailto:egapur@yandex.ru").link-green egapur@yandex.ru
-            .fast-review
-                form.form.fast-review-form
-                    span.popup__subtitle Насколько быстро Вы нашли нужный товар?
-                    .review-line__wrapper 
-                        .review-line
-                        .review-line__inner
-                            .review-line__item.review-line__item--descr-left(data-fast-review="очень долго")
-                                span.review-line__number 1
-                            .review-line__item.review-line__item--descr-left(data-fast-review="долго")
-                                span.review-line__number 2
-                            .review-line__item.review-line__item--descr-center(data-fast-review="нормально")
-                                span.review-line__number 3
-                            .review-line__item.review-line__item--descr-right(data-fast-review="быстро")
-                                span.review-line__number 4
-                            .review-line__item.review-line__item--descr-right(data-fast-review="очень быстро")
-                                span.review-line__number 5
+            form.form.fast-review-form
+                span.popup__subtitle Насколько быстро Вы нашли нужный товар?
+                .review-line__wrapper 
+                    .review-line
+                    .review-line__inner
+                        .review-line__item.review-line__item--descr-left(data-fast-review="очень долго")
+                            span.review-line__number 1
+                        .review-line__item.review-line__item--descr-left(data-fast-review="долго")
+                            span.review-line__number 2
+                        .review-line__item.review-line__item--descr-center(data-fast-review="нормально")
+                            span.review-line__number 3
+                        .review-line__item.review-line__item--descr-right(data-fast-review="быстро")
+                            span.review-line__number 4
+                        .review-line__item.review-line__item--descr-right(data-fast-review="очень быстро")
+                            span.review-line__number 5
+                .fast-review-form__line
+                    .form-group.form-group--width-l
+                        input.input-field(placeholder="Комментарий (необязательно)")
+                    input(type="submit" value="Отправить").btn.btn--size-l
+
